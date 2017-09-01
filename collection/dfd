@@ -1,0 +1,82 @@
+package collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class testSet {
+
+	public List<Course> selCourse;
+	
+	 public testSet() {
+	
+		 this.selCourse= new ArrayList<Course>();
+		 
+	}
+	
+	 public void add()
+		{
+			Course c1 = new Course(1, "java 语言");
+			selCourse.add(c1);
+			Course temp1 = (Course)(selCourse.get(0));
+			
+			Course c2 = new Course(2, "高等数学");
+			selCourse.add(c2);
+			Course temp2 = (Course)selCourse.get(1);
+
+			
+			Course[] cs = {new Course(3, "大学英语"),new Course(4, "大学语文")};
+			selCourse.addAll(0, Arrays.asList(cs));
+			Course  temp3 = (Course)selCourse.get(0);
+			Course  temp4 = (Course)selCourse.get(1);
+;
+		}
+		
+		public void foreach()
+		{
+			System.out.println("可以选择的课程如下(foreach)：");
+			for(Course cs : selCourse)  // 如何一个数据放进去了集合之中，就不会管它原来是什么类型的数据，我们都把它 当做对象处理。
+			{
+				System.out.println(cs.id + " " + cs.name);
+			}
+		}
+		
+		public void fro()
+		{
+			for(Course css : st.scourse)
+			{
+				System.out.println(css);
+			}
+
+		}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 testSet tt = new testSet();
+		 tt.add();
+		 tt.foreach();
+		 Student st = new Student(1,"小明");
+		 System.out.println("欢迎学生" + st.name+ "选课");
+		 Scanner sc = new Scanner(System.in);
+
+		 for(int i = 0; i < 3; i++)
+		 {
+			System.out.println("请输入选课的ID:");
+			Integer tid  = sc.nextInt();
+			for (Course cs : tt.selCourse) {
+				 if(tid.equals(cs.id))
+					 
+				 {
+					 st.scourse.add(cs);
+				 }
+			}
+			
+	
+		 }
+		 
+
+
+	}
+
+}
